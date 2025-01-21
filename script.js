@@ -8,3 +8,12 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+
+function getHumanChoice() {
+  const humanChoice = prompt("Select your action.").toLocaleLowerCase();
+  if (["rock", "paper", "scissors"].includes(humanChoice)) {
+    return humanChoice;
+  } else {
+    return "Invalid choice";
+  }
+}
