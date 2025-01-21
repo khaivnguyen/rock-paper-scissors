@@ -18,11 +18,8 @@ function getHumanChoice() {
   }
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
-  if (humanChoice == computerChoice) {
+  if (humanChoice === computerChoice) {
     console.log("It's a tie!")
   }
 
@@ -57,7 +54,23 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+  for (let round = 0; round < 5; round++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("You win the game!");
+  } else if (humanScore < computerScore) {
+    console.log("You lose the game!");
+  } else {
+    console.log("It's a tie game");
+  }
+}
+
+playGame();
